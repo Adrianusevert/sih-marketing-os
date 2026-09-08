@@ -6,92 +6,95 @@
 <title>SIH Groep Marketing OS</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
-/* Huisstijl SKG-IKOB: kleuren uit skgikob.nl en het logo.
-   Website gebruikt FF Signa (licentiefont); Source Sans 3 is de vrij beschikbare vervanger, met Segoe UI als terugval. */
+/* Huisstijl SIH Groep: kleuren, lettertype (Ubuntu) en vormtaal (ronde knoppen) uit sih.nl. */
 :root{
-  --skg-navy:#002E6D;
-  --skg-blue:#19427B;
-  --skg-blue-light:#3D7CC9;
-  --skg-green:#80BC00;
-  --skg-green-dark:#1F5B00;
-  --skg-pale:#D8E5F4;
-  --skg-pale-2:#EEF3F9;
+  --sih-navy:#042F6E;
+  --sih-blue:#1B4A8F;
+  --sih-blue-light:#3D7CC9;
+  --sih-orange:#FCB826;
+  --sih-orange-dark:#E0891A;
+  --sih-pale:#DDE6F3;
+  --sih-pale-2:#F1F4F9;
 
-  --ink:var(--skg-blue);
-  --ink-2:var(--skg-navy);
+  --ink:var(--sih-blue);
+  --ink-2:var(--sih-navy);
   --paper:#F3F6FA;
   --paper-2:#FFFFFF;
-  --steel:var(--skg-blue);
-  --steel-light:var(--skg-blue-light);
-  --amber:#E58A1F;
-  --green:#5E9400;
-  --plum:var(--skg-blue-light);
+  --steel:var(--sih-blue);
+  --steel-light:var(--sih-blue-light);
+  --amber:#E0891A;
+  --green:#4E9A2E;
+  --plum:var(--sih-blue-light);
   --red:#C8321E;
   --border:#D6DFEA;
   --border-dark:#D6DFEA;
   --text:#1B2E4B;
   --muted:#5F6F85;
-  --font-display:'Source Sans 3','Segoe UI',Arial,sans-serif;
-  --font-head:'Source Sans 3','Segoe UI',Arial,sans-serif;
-  --font-body:'Source Sans 3','Segoe UI',Arial,sans-serif;
-  --font-mono:'Source Sans 3','Segoe UI',Arial,sans-serif;
+  --font-display:'Ubuntu','Segoe UI',Arial,sans-serif;
+  --font-head:'Ubuntu','Segoe UI',Arial,sans-serif;
+  --font-body:'Ubuntu','Segoe UI',Arial,sans-serif;
+  --font-mono:'Ubuntu','Segoe UI',Arial,sans-serif;
 }
 *{box-sizing:border-box;}
 html{-webkit-text-size-adjust:100%;}
 body{margin:0;font-family:var(--font-body);background:var(--paper);color:var(--text);font-size:14px;}
-.logo{display:block;width:150px;height:auto;margin-bottom:8px;}
-.mobile-bar .logo{width:110px;margin:0;}
+.logo{display:block;width:120px;height:auto;margin-bottom:10px;}
+.logo-fallback{display:none;}
+.logo-img{display:block;width:120px;height:auto;margin-bottom:10px;}
+.logo-img.failed{display:none;}
+.logo-img.failed + .logo-fallback{display:block;}
+.mobile-bar .logo,.mobile-bar .logo-img{width:84px;margin:0;}
 .app{display:flex;min-height:100vh;}
 
 /* ---------- SIDEBAR ---------- */
 .sidebar{width:248px;flex-shrink:0;background:#FFFFFF;color:var(--text);display:flex;flex-direction:column;position:sticky;top:0;height:100vh;overflow-y:auto;border-right:1px solid var(--border);}
-.brand{padding:20px 18px 14px;border-bottom:4px solid var(--skg-green);}
-.brand-mark{font-size:11px;letter-spacing:.12em;color:var(--skg-blue-light);text-transform:uppercase;font-weight:600;}
-.brand-name{font-family:var(--font-display);font-size:19px;font-weight:700;margin-top:2px;color:var(--skg-navy);letter-spacing:.01em;}
+.brand{padding:20px 18px 14px;border-bottom:4px solid var(--sih-orange);}
+.brand-mark{font-size:11px;letter-spacing:.12em;color:var(--sih-orange-dark);text-transform:uppercase;font-weight:500;}
+.brand-name{font-family:var(--font-display);font-size:19px;font-weight:700;margin-top:2px;color:var(--sih-navy);letter-spacing:.01em;}
 .brand-sub{font-size:11px;color:var(--muted);margin-top:2px;}
 
 .nav{padding:14px 10px;flex:1;}
 .nav-label{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);padding:12px 10px 6px;font-weight:600;}
-.nav-item{display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:3px;font-size:14.5px;font-weight:600;color:var(--skg-blue);cursor:pointer;border-left:3px solid transparent;background:none;border-top:none;border-right:none;border-bottom:none;width:100%;text-align:left;font-family:var(--font-body);}
-.nav-item:hover{background:var(--skg-pale-2);color:var(--skg-navy);}
-.nav-item.active{background:var(--skg-pale-2);color:var(--skg-navy);border-left:3px solid var(--skg-green);}
-.nav-icon{width:16px;text-align:center;font-size:11px;color:var(--skg-green);}
+.nav-item{display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:3px;font-size:14.5px;font-weight:600;color:var(--sih-blue);cursor:pointer;border-left:3px solid transparent;background:none;border-top:none;border-right:none;border-bottom:none;width:100%;text-align:left;font-family:var(--font-body);}
+.nav-item:hover{background:var(--sih-pale-2);color:var(--sih-navy);}
+.nav-item.active{background:var(--sih-pale-2);color:var(--sih-navy);border-left:3px solid var(--sih-orange);}
+.nav-icon{width:16px;text-align:center;font-size:11px;color:var(--sih-orange);}
 
 .org-tabs{padding:4px 10px 14px;}
 .org-chip{display:flex;align-items:center;gap:8px;padding:7px 10px;font-size:13px;color:var(--text);border-radius:3px;cursor:pointer;margin-bottom:2px;}
-.org-chip:hover{background:var(--skg-pale-2);}
+.org-chip:hover{background:var(--sih-pale-2);}
 .org-dot{width:8px;height:8px;border-radius:1px;flex-shrink:0;}
 
 .sidebar-tools{padding:10px 10px 6px;border-top:1px solid var(--border);display:flex;flex-direction:column;gap:4px;}
-.tool-btn{background:#fff;border:1px solid var(--border);color:var(--skg-blue);font-family:var(--font-body);font-size:12.5px;font-weight:600;padding:7px 10px;border-radius:3px;cursor:pointer;text-align:left;}
-.tool-btn:hover{border-color:var(--skg-blue-light);background:var(--skg-pale-2);}
+.tool-btn{background:#fff;border:1px solid var(--border);color:var(--sih-blue);font-family:var(--font-body);font-size:12.5px;font-weight:500;padding:7px 12px;border-radius:20px;cursor:pointer;text-align:left;}
+.tool-btn:hover{border-color:var(--sih-blue-light);background:var(--sih-pale-2);}
 .sidebar-foot{padding:12px 18px 16px;font-size:11px;color:var(--muted);line-height:1.5;}
 
 /* mobile header */
-.mobile-bar{display:none;position:sticky;top:0;z-index:50;background:#fff;color:var(--skg-navy);padding:10px 16px;align-items:center;justify-content:space-between;border-bottom:4px solid var(--skg-green);}
+.mobile-bar{display:none;position:sticky;top:0;z-index:50;background:#fff;color:var(--sih-navy);padding:10px 16px;align-items:center;justify-content:space-between;border-bottom:4px solid var(--sih-orange);}
 .mobile-bar .brand-name{font-size:16px;margin:0;}
-.hamburger{background:none;border:1px solid var(--border);color:var(--skg-blue);font-size:18px;padding:4px 10px;border-radius:3px;cursor:pointer;}
+.hamburger{background:none;border:1px solid var(--border);color:var(--sih-blue);font-size:18px;padding:4px 10px;border-radius:3px;cursor:pointer;}
 
 /* ---------- MAIN ---------- */
 .main{flex:1;min-width:0;padding:28px 34px 60px;}
 .topbar{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:22px;gap:12px;flex-wrap:wrap;}
-.page-title{font-family:var(--font-display);font-size:28px;font-weight:700;margin:0;color:var(--skg-navy);}
+.page-title{font-family:var(--font-display);font-size:28px;font-weight:700;margin:0;color:var(--sih-navy);}
 .page-sub{color:var(--muted);font-size:13.5px;margin-top:4px;}
 .view{display:none;}
 .view.active{display:block;}
 
-.demo-banner{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;background:#F2F8E3;border:1px solid #C5DE8A;border-left:4px solid var(--skg-green);color:var(--skg-green-dark);border-radius:3px;padding:10px 14px;margin-bottom:20px;font-size:13.5px;}
+.demo-banner{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;background:#FFF6E0;border:1px solid #F5D98A;border-left:4px solid var(--sih-orange);color:#7A4E00;border-radius:3px;padding:10px 14px;margin-bottom:20px;font-size:13.5px;}
 .demo-banner strong{font-size:11px;letter-spacing:.08em;text-transform:uppercase;margin-right:6px;}
 
-.btn{font-family:var(--font-body);font-size:13.5px;font-weight:600;padding:8px 14px;border-radius:3px;border:1px solid var(--border);background:var(--paper-2);color:var(--skg-blue);cursor:pointer;display:inline-flex;align-items:center;gap:6px;}
+.btn{font-family:var(--font-body);font-size:13.5px;font-weight:500;padding:8px 16px;border-radius:20px;border:1px solid var(--border);background:var(--paper-2);color:var(--sih-blue);cursor:pointer;display:inline-flex;align-items:center;gap:6px;}
 .btn:hover{border-color:var(--steel);}
-.btn-primary{background:var(--skg-blue);color:#fff;border-color:var(--skg-blue);}
-.btn-primary:hover{background:var(--skg-navy);border-color:var(--skg-navy);}
-.btn-amber{background:var(--skg-green);color:#fff;border-color:var(--skg-green);}
+.btn-primary{background:var(--sih-navy);color:#fff;border-color:var(--sih-navy);}
+.btn-primary:hover{background:var(--sih-blue);border-color:var(--sih-blue);}
+.btn-amber{background:var(--sih-orange);color:#fff;border-color:var(--sih-orange);}
 .btn-danger{color:var(--red);border-color:var(--red);}
-.btn-sm{padding:5px 10px;font-size:12px;}
+.btn-sm{padding:5px 12px;font-size:12px;}
 .btn-ghost{background:transparent;border:none;color:var(--muted);}
 .btn-ghost:hover{color:var(--text);}
 
@@ -102,23 +105,23 @@ body{margin:0;font-family:var(--font-body);background:var(--paper);color:var(--t
 .grid-2{grid-template-columns:repeat(2,1fr);}
 @media(max-width:1100px){.grid-4{grid-template-columns:repeat(2,1fr);}.grid-3{grid-template-columns:repeat(2,1fr);}}
 
-.card{background:var(--paper-2);border:1px solid var(--border);border-radius:3px;padding:16px 18px;}
+.card{background:var(--paper-2);border:1px solid var(--border);border-radius:8px;padding:16px 18px;}
 .metric-label{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600;}
-.metric-value{font-family:var(--font-display);font-size:30px;font-weight:700;margin-top:4px;color:var(--skg-navy);}
+.metric-value{font-family:var(--font-display);font-size:30px;font-weight:700;margin-top:4px;color:var(--sih-navy);}
 .metric-delta{font-size:12px;margin-top:4px;font-weight:600;}
 .metric-delta.up{color:var(--green);}
 .metric-delta.down{color:var(--red);}
 .metric-delta.neutral{color:var(--muted);}
 
-.section-title{font-family:var(--font-head);font-size:16px;font-weight:700;margin:0 0 12px;display:flex;align-items:center;justify-content:space-between;gap:8px;color:var(--skg-navy);}
+.section-title{font-family:var(--font-head);font-size:16px;font-weight:700;margin:0 0 12px;display:flex;align-items:center;justify-content:space-between;gap:8px;color:var(--sih-navy);}
 .section-block{margin-bottom:26px;}
 
-.chip{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:700;padding:3px 8px;border-radius:2px;text-transform:uppercase;letter-spacing:.04em;white-space:nowrap;}
-.chip-green{background:#EAF4D3;color:var(--skg-green-dark);}
+.chip{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:500;padding:3px 9px;border-radius:12px;text-transform:uppercase;letter-spacing:.04em;white-space:nowrap;}
+.chip-green{background:#E3F2D9;color:#2F6B14;}
 .chip-amber{background:#FBEBD5;color:#9A5A0A;}
 .chip-red{background:#F8DEDA;color:var(--red);}
 .chip-gray{background:#E9EEF4;color:var(--muted);}
-.chip-steel{background:var(--skg-pale);color:var(--skg-blue);}
+.chip-steel{background:var(--sih-pale);color:var(--sih-blue);}
 
 .row-list{display:flex;flex-direction:column;}
 .list-row{display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--border);gap:12px;}
@@ -135,21 +138,21 @@ body{margin:0;font-family:var(--font-body);background:var(--paper);color:var(--t
 
 /* table */
 table{width:100%;border-collapse:collapse;font-size:13px;}
-th{text-align:left;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#fff;background:var(--skg-blue);font-weight:600;padding:9px 10px;border-bottom:1px solid var(--skg-blue);white-space:nowrap;}
+th{text-align:left;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#fff;background:var(--sih-navy);font-weight:500;padding:9px 10px;border-bottom:1px solid var(--sih-navy);white-space:nowrap;}
 th.sortable{cursor:pointer;user-select:none;}
-th.sortable:hover{background:var(--skg-navy);}
+th.sortable:hover{background:var(--sih-blue);}
 th.sorted-asc::after{content:' \25B2';font-size:8px;}
 th.sorted-desc::after{content:' \25BC';font-size:8px;}
 td{padding:10px 10px;border-bottom:1px solid var(--border);vertical-align:top;}
-tr:hover td{background:var(--skg-pale-2);}
+tr:hover td{background:var(--sih-pale-2);}
 .num{font-variant-numeric:tabular-nums;}
-.table-wrap{overflow-x:auto;background:var(--paper-2);border:1px solid var(--border);border-radius:3px;}
+.table-wrap{overflow-x:auto;background:var(--paper-2);border:1px solid var(--border);border-radius:8px;}
 tr.late td{background:#FBF1EE;}
 
 .toolbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;gap:10px;flex-wrap:wrap;}
 .filters{display:flex;gap:8px;flex-wrap:wrap;}
 select,input[type=text],input[type=number],input[type=date],input[type=month],input[type=search],textarea{font-family:var(--font-body);font-size:13px;padding:7px 10px;border:1px solid var(--border);border-radius:4px;background:#fff;color:var(--text);}
-select:focus,input:focus,textarea:focus{outline:2px solid var(--skg-green);outline-offset:0;}
+select:focus,input:focus,textarea:focus{outline:2px solid var(--sih-orange);outline-offset:0;}
 label{font-size:12px;font-weight:600;color:var(--muted);display:block;margin-bottom:4px;}
 .field{margin-bottom:12px;}
 .field input,.field select,.field textarea{width:100%;}
@@ -160,9 +163,9 @@ textarea{width:100%;resize:vertical;font-family:var(--font-body);}
 /* modal */
 .overlay{position:fixed;inset:0;background:rgba(22,27,34,.55);display:none;align-items:flex-start;justify-content:center;z-index:100;padding:40px 20px;overflow-y:auto;}
 .overlay.active{display:flex;}
-.modal{background:var(--paper-2);border-radius:3px;width:100%;max-width:560px;padding:24px 26px;border-top:4px solid var(--skg-green);}
+.modal{background:var(--paper-2);border-radius:8px;width:100%;max-width:560px;padding:24px 26px;border-top:4px solid var(--sih-orange);}
 .modal-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;}
-.modal-head h3{margin:0;font-family:var(--font-head);font-size:18px;color:var(--skg-navy);}
+.modal-head h3{margin:0;font-family:var(--font-head);font-size:18px;color:var(--sih-navy);}
 .modal-foot{display:flex;justify-content:space-between;margin-top:18px;gap:8px;flex-wrap:wrap;}
 
 .pbar{height:7px;border-radius:2px;background:#E4EAF2;overflow:hidden;}
@@ -170,18 +173,18 @@ textarea{width:100%;resize:vertical;font-family:var(--font-body);}
 
 /* calendar */
 .cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:6px;overflow:hidden;}
-.cal-dow{background:var(--skg-blue);color:#fff;font-size:11px;text-transform:uppercase;text-align:center;padding:6px 0;font-weight:600;letter-spacing:.06em;}
+.cal-dow{background:var(--sih-navy);color:#fff;font-size:11px;text-transform:uppercase;text-align:center;padding:6px 0;font-weight:600;letter-spacing:.06em;}
 .cal-cell{background:var(--paper-2);min-height:92px;padding:6px;font-size:11.5px;cursor:pointer;}
 .cal-cell:hover{background:#FBFAF6;}
 .cal-cell.other-month{background:#F3F6FA;color:#A9B4C3;}
-.cal-cell.today .cal-daynum{font-weight:700;font-size:11.5px;margin-bottom:4px;color:var(--skg-blue);}
+.cal-cell.today .cal-daynum{font-weight:700;font-size:11.5px;margin-bottom:4px;color:var(--sih-blue);}
 .cal-daynum{font-family:var(--font-mono);font-weight:600;font-size:11px;margin-bottom:4px;}
 .cal-item{border-radius:3px;padding:2px 5px;margin-bottom:3px;font-size:10.5px;font-weight:600;line-height:1.3;color:#fff;cursor:pointer;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
 .cal-list{display:none;}
 
 .empty{padding:40px 20px;text-align:center;color:var(--muted);font-size:13px;}
 .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);}
-.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--skg-navy);color:#fff;padding:10px 18px;border-radius:3px;font-size:13.5px;z-index:200;opacity:0;transition:opacity .2s;pointer-events:none;}
+.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--sih-navy);color:#fff;padding:10px 18px;border-radius:3px;font-size:13.5px;z-index:200;opacity:0;transition:opacity .2s;pointer-events:none;}
 .toast.show{opacity:1;}
 
 /* ---------- RESPONSIVE ---------- */
@@ -210,22 +213,13 @@ textarea{width:100%;resize:vertical;font-family:var(--font-body);}
 </head>
 <body>
 <div class="mobile-bar">
-  <div style="display:flex;align-items:center;gap:12px;"><svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 300" role="img" aria-label="SKG-IKOB Certificatie">
-<polyline fill="#FFFFFF" points="80.955,30.590 80.955,148.615 217.994,137.039 217.994,0 80.955,30.590"/>
-<polyline fill="#3D7CC9" points="0,258.306 0,97.163 137.037,74.964 137.037,265.415 0,258.306"/>
-<polyline fill="#80BC00" points="217.994,0 80.955,30.590 80.955,84.049 137.037,74.964 137.037,143.878 217.994,137.039 217.994,0"/>
-<polyline fill="#1F5B00" points="137.037,74.964 80.955,84.049 80.955,148.615 137.037,143.878 137.037,74.964"/>
-<g fill="#002E6D">
-<path d="M162.670364,216.286621v-7.84082c0,0,8.190918,2.030273,14.491699,2.030273c4.270508,0,11.201172-1.399414,11.201172-6.860352c0-9.731445-26.042969-3.920898-26.042969-21.212891c0-11.480469,9.661133-15.050781,20.442383-15.050781c6.790527,0,12.601074,1.400391,12.601074,1.400391v7.560547c0,0-5.600586-1.330078-11.621094-1.330078c-3.780273,0-10.851074,1.048828-10.851074,6.230469c0,10.78125,26.25293,2.939453,26.25293,21.492188c0,11.550781-11.55127,15.332031-21.072266,15.332031C169.321243,218.037598,162.670364,216.286621,162.670364,216.286621z"/>
-<path d="M237.643509,217.196777l-19.8125-23.3125v23.3125h-9.94043v-49.004883h9.94043v23.732422l19.041992-23.732422h12.741211l-21.421875,23.942383l23.171875,25.0625H237.643509z"/>
-<path d="M278.168884,217.967285c-19.041992,0-26.113266-10.291016-26.113266-25.273438c0-26.953125,24.993149-25.272461,28.493149-25.272461c5.950195,0,12.041016,0.910156,12.041016,0.910156v7.630859c0,0-6.44043-0.839844-11.760742-0.839844c-9.311523,0-18.0625,2.520508-18.0625,17.571289c0,12.391602,4.34082,17.501953,16.311523,17.501953c3.081055,0,4.691406-0.349609,4.691406-0.349609v-15.261719h10.010742v21.351562C293.780212,215.936035,285.449158,217.967285,278.168884,217.967285z"/>
-<path d="M302.875916,200.115723v-7.912109h18.691406v7.912109H302.875916z"/>
-<path d="M332.345642,217.196777v-49.004883h10.151367v49.004883H332.345642z"/>
-<path d="M384.007751,217.196777l-19.811523-23.3125v23.3125h-9.941406v-49.004883h9.941406v23.732422l19.041992-23.732422h12.741211l-21.422852,23.942383l23.172852,25.0625H384.007751z"/>
-<path d="M422.922791,218.246582c-14.771484,0-24.501953-8.960938-24.501953-25.552734s9.730469-25.552734,24.501953-25.552734s24.50293,8.960938,24.50293,25.552734S437.694275,218.246582,422.922791,218.246582zM422.853455,174.70166c-11.341797,0-13.511719,8.541016-13.511719,18.0625s2.169922,17.851562,13.511719,17.851562c11.411133,0,13.651367-8.470703,13.651367-17.992188C436.504822,183.103027,434.264587,174.70166,422.853455,174.70166z"/>
-<path d="M474.932556,217.196777H457.15033v-49.004883h17.782227c7.770508,0,17.851562,1.400391,17.851562,11.761719c0,6.650391-3.920898,10.009766-9.661133,11.480469v0.980469c0,0,11.061523,0.55957,11.061523,11.480469C494.184509,218.246582,476.33197,217.196777,474.932556,217.196777zM473.952087,188.844238c2.730469,0,8.331055,0.208984,8.331055-7.000977c0-7.280273-5.600586-7.071289-8.331055-7.071289h-7.000977v14.072266H473.952087zM474.652283,210.266113c2.870117,0,8.680664,0.279297,8.680664-7.28125s-5.810547-7.280273-8.680664-7.280273h-7.701172v14.561523H474.652283z"/>
-</g>
-<text x="162" y="266" fill="#002E6D" font-family="'Source Sans 3','Segoe UI',Arial,sans-serif" font-size="27" letter-spacing="0.5">Certificatie</text>
+  <div style="display:flex;align-items:center;gap:12px;"><img class="logo-img" src="https://www.sih.nl/assets/files/logo-beste-sih-groep.png" alt="SIH groep" onerror="this.classList.add('failed')"><svg class="logo logo-fallback" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 200" role="img" aria-label="SIH groep">
+<polygon points="20,70 80,40 140,70 80,100" fill="#FFD27A"/>
+<polygon points="20,70 80,100 80,170 20,140" fill="#F09000"/>
+<polygon points="80,100 140,70 140,140 80,170" fill="#E8701C"/>
+<polygon points="50,55 110,25 140,40 80,70" fill="#FCB826"/>
+<text x="160" y="118" fill="#042F6E" font-family="'Ubuntu','Segoe UI',Arial,sans-serif" font-size="78" font-weight="700">SIH</text>
+<text x="262" y="150" fill="#F09000" font-family="'Ubuntu','Segoe UI',Arial,sans-serif" font-size="30" font-weight="400">groep</text>
 </svg><div class="brand-name">Marketing OS</div></div>
   <button class="hamburger" id="hamburger" aria-label="Menu openen">&#9776;</button>
 </div>
@@ -235,26 +229,17 @@ textarea{width:100%;resize:vertical;font-family:var(--font-body);}
   <!-- ================= SIDEBAR ================= -->
   <nav class="sidebar" id="sidebar" aria-label="Hoofdnavigatie">
     <div class="brand">
-      <svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 300" role="img" aria-label="SKG-IKOB Certificatie">
-<polyline fill="#FFFFFF" points="80.955,30.590 80.955,148.615 217.994,137.039 217.994,0 80.955,30.590"/>
-<polyline fill="#3D7CC9" points="0,258.306 0,97.163 137.037,74.964 137.037,265.415 0,258.306"/>
-<polyline fill="#80BC00" points="217.994,0 80.955,30.590 80.955,84.049 137.037,74.964 137.037,143.878 217.994,137.039 217.994,0"/>
-<polyline fill="#1F5B00" points="137.037,74.964 80.955,84.049 80.955,148.615 137.037,143.878 137.037,74.964"/>
-<g fill="#002E6D">
-<path d="M162.670364,216.286621v-7.84082c0,0,8.190918,2.030273,14.491699,2.030273c4.270508,0,11.201172-1.399414,11.201172-6.860352c0-9.731445-26.042969-3.920898-26.042969-21.212891c0-11.480469,9.661133-15.050781,20.442383-15.050781c6.790527,0,12.601074,1.400391,12.601074,1.400391v7.560547c0,0-5.600586-1.330078-11.621094-1.330078c-3.780273,0-10.851074,1.048828-10.851074,6.230469c0,10.78125,26.25293,2.939453,26.25293,21.492188c0,11.550781-11.55127,15.332031-21.072266,15.332031C169.321243,218.037598,162.670364,216.286621,162.670364,216.286621z"/>
-<path d="M237.643509,217.196777l-19.8125-23.3125v23.3125h-9.94043v-49.004883h9.94043v23.732422l19.041992-23.732422h12.741211l-21.421875,23.942383l23.171875,25.0625H237.643509z"/>
-<path d="M278.168884,217.967285c-19.041992,0-26.113266-10.291016-26.113266-25.273438c0-26.953125,24.993149-25.272461,28.493149-25.272461c5.950195,0,12.041016,0.910156,12.041016,0.910156v7.630859c0,0-6.44043-0.839844-11.760742-0.839844c-9.311523,0-18.0625,2.520508-18.0625,17.571289c0,12.391602,4.34082,17.501953,16.311523,17.501953c3.081055,0,4.691406-0.349609,4.691406-0.349609v-15.261719h10.010742v21.351562C293.780212,215.936035,285.449158,217.967285,278.168884,217.967285z"/>
-<path d="M302.875916,200.115723v-7.912109h18.691406v7.912109H302.875916z"/>
-<path d="M332.345642,217.196777v-49.004883h10.151367v49.004883H332.345642z"/>
-<path d="M384.007751,217.196777l-19.811523-23.3125v23.3125h-9.941406v-49.004883h9.941406v23.732422l19.041992-23.732422h12.741211l-21.422852,23.942383l23.172852,25.0625H384.007751z"/>
-<path d="M422.922791,218.246582c-14.771484,0-24.501953-8.960938-24.501953-25.552734s9.730469-25.552734,24.501953-25.552734s24.50293,8.960938,24.50293,25.552734S437.694275,218.246582,422.922791,218.246582zM422.853455,174.70166c-11.341797,0-13.511719,8.541016-13.511719,18.0625s2.169922,17.851562,13.511719,17.851562c11.411133,0,13.651367-8.470703,13.651367-17.992188C436.504822,183.103027,434.264587,174.70166,422.853455,174.70166z"/>
-<path d="M474.932556,217.196777H457.15033v-49.004883h17.782227c7.770508,0,17.851562,1.400391,17.851562,11.761719c0,6.650391-3.920898,10.009766-9.661133,11.480469v0.980469c0,0,11.061523,0.55957,11.061523,11.480469C494.184509,218.246582,476.33197,217.196777,474.932556,217.196777zM473.952087,188.844238c2.730469,0,8.331055,0.208984,8.331055-7.000977c0-7.280273-5.600586-7.071289-8.331055-7.071289h-7.000977v14.072266H473.952087zM474.652283,210.266113c2.870117,0,8.680664,0.279297,8.680664-7.28125s-5.810547-7.280273-8.680664-7.280273h-7.701172v14.561523H474.652283z"/>
-</g>
-<text x="162" y="266" fill="#002E6D" font-family="'Source Sans 3','Segoe UI',Arial,sans-serif" font-size="27" letter-spacing="0.5">Certificatie</text>
+      <img class="logo-img" src="https://www.sih.nl/assets/files/logo-beste-sih-groep.png" alt="SIH groep" onerror="this.classList.add('failed')"><svg class="logo logo-fallback" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 200" role="img" aria-label="SIH groep">
+<polygon points="20,70 80,40 140,70 80,100" fill="#FFD27A"/>
+<polygon points="20,70 80,100 80,170 20,140" fill="#F09000"/>
+<polygon points="80,100 140,70 140,140 80,170" fill="#E8701C"/>
+<polygon points="50,55 110,25 140,40 80,70" fill="#FCB826"/>
+<text x="160" y="118" fill="#042F6E" font-family="'Ubuntu','Segoe UI',Arial,sans-serif" font-size="78" font-weight="700">SIH</text>
+<text x="262" y="150" fill="#F09000" font-family="'Ubuntu','Segoe UI',Arial,sans-serif" font-size="30" font-weight="400">groep</text>
 </svg>
-      <div class="brand-mark">SIH Groep</div>
+      <div class="brand-mark">Holding</div>
       <div class="brand-name">Marketing OS</div>
-      <div class="brand-sub">versie 2.1</div>
+      <div class="brand-sub">versie 2.2</div>
     </div>
     <div class="nav">
       <div class="nav-label">Overzicht</div>
@@ -501,8 +486,8 @@ const STORAGE_KEY = 'sih-marketing-os-v2';
 const SCHEMA_VERSION = 2;
 let DATA = null;
 
-const ORG_PALETTE = ['#19427B','#80BC00','#3D7CC9','#1F5B00','#E58A1F','#7C5C8C','#2F6F6B','#5F6F85'];
-const CAL_TYPES = { 'Social':'#19427B','Nieuwsbrief':'#3D7CC9','Blog':'#80BC00','Event':'#1F5B00','Beurs':'#E58A1F','Advertentie':'#7C5C8C','Website':'#2F6F6B','Webinar':'#002E6D','Persbericht':'#8A6D3B','Overig':'#5F6F85' };
+const ORG_PALETTE = ['#19427B','#FCB826','#6AAF3A','#D8322A','#3D7CC9','#7C5C8C','#2F6F6B','#5F6F85'];
+const CAL_TYPES = { 'Social':'#042F6E','Nieuwsbrief':'#3D7CC9','Blog':'#6AAF3A','Event':'#E0891A','Beurs':'#D8322A','Advertentie':'#7C5C8C','Website':'#2F6F6B','Webinar':'#1B4A8F','Persbericht':'#8A6D3B','Overig':'#5F6F85' };
 const CAMP_STATUS = ['Gepland','Actief','Afgerond','Gepauzeerd'];
 const TASK_STATUS = ['Open','Bezig','Afgerond'];
 const PRIO = ['Hoog','Midden','Laag'];
@@ -530,9 +515,9 @@ function lastMonths(n){ const out=[]; const now=new Date(); for(let i=n-1;i>=0;i
 function seedData(){
   const orgs = [
     { id:'org_ikob', naam:'SKG-IKOB', kleur:'#19427B', type:'Certificatie en inspectie (bouw)', verantwoordelijke:'Marketing SKG-IKOB', budget:45000, doelstellingen:'Merkbekendheid vergroten in de bouw- en installatiesector en leads genereren voor certificatietrajecten.', website:'skg-ikob.nl', notities:'Focus op vakbeurzen en vakmedia.' },
-    { id:'org_bris', naam:'BRIS', kleur:'#80BC00', type:'Kennis- en informatieplatform bouwregelgeving', verantwoordelijke:'Marketing BRIS', budget:30000, doelstellingen:'Positioneren als kennisplatform voor bouwregelgeving en groei van nieuwsbriefabonnees.', website:'bris.nl', notities:'Contentmarketing en webinars zijn de kernkanalen.' },
-    { id:'org_keurhuis', naam:'Keurhuis Nederland', kleur:'#3D7CC9', type:'Keuringsinstantie', verantwoordelijke:'Marketing Keurhuis', budget:25000, doelstellingen:'Lokale zichtbaarheid vergroten en klanttevredenheid omzetten in reviews en doorverwijzingen.', website:'keurhuis.nl', notities:'Sterk regionaal, veel mond-tot-mondreclame.' },
-    { id:'org_bc', naam:'Building Changes', kleur:'#1F5B00', type:'Advies en innovatie bouwsector', verantwoordelijke:'Marketing Building Changes', budget:20000, doelstellingen:'Autoriteit opbouwen rond duurzame bouwinnovatie.', website:'buildingchanges.nl', notities:'Nieuw merk binnen de groep, focus op contentopbouw.' }
+    { id:'org_bris', naam:'BRIS', kleur:'#FCB826', type:'Kennis- en informatieplatform bouwregelgeving', verantwoordelijke:'Marketing BRIS', budget:30000, doelstellingen:'Positioneren als kennisplatform voor bouwregelgeving en groei van nieuwsbriefabonnees.', website:'bris.nl', notities:'Contentmarketing en webinars zijn de kernkanalen.' },
+    { id:'org_keurhuis', naam:'Keurhuis Nederland', kleur:'#6AAF3A', type:'Keuringsinstantie', verantwoordelijke:'Marketing Keurhuis', budget:25000, doelstellingen:'Lokale zichtbaarheid vergroten en klanttevredenheid omzetten in reviews en doorverwijzingen.', website:'keurhuis.nl', notities:'Sterk regionaal, veel mond-tot-mondreclame.' },
+    { id:'org_bc', naam:'Building Changes', kleur:'#D8322A', type:'Advies en innovatie bouwsector', verantwoordelijke:'Marketing Building Changes', budget:20000, doelstellingen:'Autoriteit opbouwen rond duurzame bouwinnovatie.', website:'buildingchanges.nl', notities:'Nieuw merk binnen de groep, focus op contentopbouw.' }
   ];
 
   const campaigns = [
@@ -604,7 +589,7 @@ function loadData(){
 function migrate(d){
   d.meta = d.meta || { demo:false, demoBannerHidden:true };
   d.orgs = d.orgs || []; d.campaigns = d.campaigns || []; d.tasks = d.tasks || []; d.calendar = d.calendar || []; d.kpi = d.kpi || [];
-  const OLD_COLORS = { '#3D5A73':'#19427B', '#C97B3D':'#80BC00', '#5B8266':'#3D7CC9', '#7C5C8C':'#1F5B00' };
+  const OLD_COLORS = { '#3D5A73':'#19427B', '#C97B3D':'#FCB826', '#5B8266':'#6AAF3A', '#7C5C8C':'#D8322A', '#80BC00':'#FCB826', '#3D7CC9':'#6AAF3A', '#1F5B00':'#D8322A' };
   d.orgs.forEach((o,i)=>{ if(!o.kleur) o.kleur = ORG_PALETTE[i % ORG_PALETTE.length]; else if(OLD_COLORS[o.kleur.toUpperCase()]) o.kleur = OLD_COLORS[o.kleur.toUpperCase()]; });
   d.tasks.forEach(t=>{ if(!t.orgId && t.campagneId){ const c=d.campaigns.find(x=>x.id===t.campagneId); if(c) t.orgId=c.orgId; } });
   d.schema = SCHEMA_VERSION;
@@ -1181,7 +1166,7 @@ function renderKPI(){
 let chart1, chart2;
 function renderKPICharts(){
   if(typeof Chart==='undefined') return;
-  Chart.defaults.font.family = "'Source Sans 3','Segoe UI',Arial,sans-serif"; Chart.defaults.color = '#5F6F85';
+  Chart.defaults.font.family = "'Ubuntu','Segoe UI',Arial,sans-serif"; Chart.defaults.color = '#5F6F85';
   const entries = kpiEntries();
   const months = [...new Set(entries.map(k=>k.maand))].sort();
   const agg = months.map(m=>{ const rows=entries.filter(k=>k.maand===m); return { m, bezoek: rows.reduce((s,r)=>s+(r.bezoek||0),0), leads: rows.reduce((s,r)=>s+(r.leads||0),0), kosten: rows.reduce((s,r)=>s+(r.kosten||0),0) }; });
@@ -1192,8 +1177,8 @@ function renderKPICharts(){
   chart1 = new Chart(document.getElementById('kpiChart1'), {
     type:'line',
     data:{ labels, datasets:[
-      { label:'Websitebezoek', data:agg.map(a=>a.bezoek), borderColor:'#19427B', backgroundColor:'rgba(25,66,123,0.08)', fill:true, tension:.3, yAxisID:'y' },
-      { label:'Leads', data:agg.map(a=>a.leads), borderColor:'#80BC00', backgroundColor:'rgba(128,188,0,0.10)', fill:true, tension:.3, yAxisID:'y1', borderDash:[4,3] }
+      { label:'Websitebezoek', data:agg.map(a=>a.bezoek), borderColor:'#042F6E', backgroundColor:'rgba(4,47,110,0.08)', fill:true, tension:.3, yAxisID:'y' },
+      { label:'Leads', data:agg.map(a=>a.leads), borderColor:'#FCB826', backgroundColor:'rgba(252,184,38,0.12)', fill:true, tension:.3, yAxisID:'y1', borderDash:[4,3] }
     ]},
     options:{ ...common, scales:{ y:{position:'left',title:{display:true,text:'Bezoek'},beginAtZero:true}, y1:{position:'right',grid:{drawOnChartArea:false},title:{display:true,text:'Leads'},beginAtZero:true} } }
   });
@@ -1201,7 +1186,7 @@ function renderKPICharts(){
     type:'line',
     data:{ labels, datasets:[
       { label:'Conversie (%)', data:agg.map(a=>a.bezoek?+(a.leads/a.bezoek*100).toFixed(2):0), borderColor:'#3D7CC9', backgroundColor:'rgba(61,124,201,0.08)', fill:true, tension:.3, yAxisID:'y' },
-      { label:'Kosten per lead (euro)', data:agg.map(a=>a.leads?Math.round(a.kosten/a.leads):0), borderColor:'#1F5B00', fill:false, tension:.3, borderDash:[4,3], yAxisID:'y1' }
+      { label:'Kosten per lead (euro)', data:agg.map(a=>a.leads?Math.round(a.kosten/a.leads):0), borderColor:'#E0891A', fill:false, tension:.3, borderDash:[4,3], yAxisID:'y1' }
     ]},
     options:{ ...common, scales:{ y:{position:'left',title:{display:true,text:'Conversie %'},beginAtZero:true}, y1:{position:'right',grid:{drawOnChartArea:false},title:{display:true,text:'Euro per lead'},beginAtZero:true} } }
   });
