@@ -1,0 +1,17 @@
+{
+  "name": "SIH Groep Marketing OS",
+  "short_name": "Marketing OS",
+  "description": "Marketingdashboard SIH Groep: campagnes, taken, kalender, KPI's en budget",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#F3F6FA",
+  "theme_color": "#042F6E",
+  "lang": "nl",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

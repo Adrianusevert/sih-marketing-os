@@ -12,6 +12,16 @@ Het dashboard is één bestand: `index.html`. Het werkt in Chrome en Edge zonder
 
 Bij de eerste start staat er fictieve voorbeelddata in. Klik op "Voorbeelddata wissen" voordat je met echte gegevens werkt.
 
+## Als app op telefoon of tablet
+
+Open de link op je telefoon en zet hem op het beginscherm. Daarna opent Marketing OS als app, zonder browserbalk, en werkt hij ook zonder verbinding.
+
+- iPhone of iPad: open de link in Safari, tik op Delen en kies "Zet op beginscherm".
+- Android: open de link in Chrome en tik op "Installeren" in de balk bovenaan, of kies in het menu "App installeren".
+- Windows of Mac: in Chrome of Edge verschijnt rechts in de adresbalk een installeerknop.
+
+Op kleine schermen staan de belangrijkste onderdelen in een tabbalk onderin; de rest zit achter "Meer".
+
 ## Gegevens delen met collega's
 
 Gegevens staan per browser en per apparaat. Delen gaat via het menu Gegevens links onderin:

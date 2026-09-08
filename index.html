@@ -2,8 +2,16 @@
 <html lang="nl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>SIH Groep Marketing OS</title>
+<meta name="theme-color" content="#042F6E">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Marketing OS">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -187,23 +195,95 @@ textarea{width:100%;resize:vertical;font-family:var(--font-body);}
 .toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--sih-navy);color:#fff;padding:10px 18px;border-radius:3px;font-size:13.5px;z-index:200;opacity:0;transition:opacity .2s;pointer-events:none;}
 .toast.show{opacity:1;}
 
-/* ---------- RESPONSIVE ---------- */
+/* ---------- RESPONSIVE / APP ---------- */
+.tabbar{display:none;}
 @media(max-width:900px){
   .app{flex-direction:column;}
-  .mobile-bar{display:flex;}
-  .sidebar{position:fixed;top:0;left:0;height:100vh;width:270px;transform:translateX(-100%);transition:transform .2s;z-index:60;box-shadow:2px 0 12px rgba(0,46,109,.25);}
+  .mobile-bar{display:flex;padding-top:calc(10px + env(safe-area-inset-top));}
+  .sidebar{position:fixed;top:0;left:0;height:100vh;height:100dvh;width:280px;transform:translateX(-100%);transition:transform .2s;z-index:60;box-shadow:2px 0 12px rgba(4,47,110,.25);padding-top:env(safe-area-inset-top);}
   .sidebar.open{transform:translateX(0);}
   .sidebar-backdrop{display:none;position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:55;}
   .sidebar-backdrop.show{display:block;}
-  .main{padding:18px 16px 50px;}
-  .grid-2,.grid-3,.grid-4{grid-template-columns:1fr;}
+  .main{padding:16px 14px calc(84px + env(safe-area-inset-bottom));}
+  .grid-2,.grid-3,.grid-4{grid-template-columns:1fr;gap:12px;}
+  .grid-4{grid-template-columns:1fr 1fr;}
   .field-row{grid-template-columns:1fr;}
-  .page-title{font-size:21px;}
+  .page-title{font-size:22px;}
+  .topbar{margin-bottom:14px;}
+  .topbar .btn{justify-content:center;min-height:42px;}
+  .topbar > div:last-child{width:100%;display:flex;gap:8px;flex-wrap:wrap;}
+  .topbar > div:last-child .btn{flex:1;}
+  .filters{width:100%;}
+  .filters input{flex:1 1 100%;min-height:44px;font-size:16px;}
+  .filters select{flex:1 1 44%;min-height:44px;font-size:15px;padding:7px 8px;}
+  .toolbar .page-sub{width:100%;}
+  .btn{min-height:40px;}
+  .btn-sm{min-height:36px;}
+  .nav-item{min-height:46px;font-size:16px;}
+  .org-chip{min-height:42px;font-size:14px;}
+  .tool-btn{min-height:42px;font-size:14px;}
+  select,input[type=text],input[type=number],input[type=date],input[type=month],input[type=search],textarea{font-size:16px;min-height:44px;}
+  .metric-value{font-size:26px;}
+  .card{padding:14px;}
   .cal-grid{display:none;}
   .cal-list{display:block;}
-  .modal{padding:18px;}
-  .overlay{padding:16px 10px;}
+  .modal{padding:16px;border-radius:12px;}
+  .overlay{padding:10px 8px calc(10px + env(safe-area-inset-bottom));align-items:flex-end;}
+  .modal-foot .btn{flex:1;justify-content:center;}
+  .modal-foot > div{display:flex;flex:1;gap:8px;}
+  .list-row{padding:12px 0;}
+  .list-row-title{font-size:14.5px;}
+  .list-row-sub{font-size:12.5px;}
+  .demo-banner{font-size:13px;padding:10px 12px;}
+  /* Tabellen worden kaarten */
+  .table-wrap{background:transparent;border:none;overflow:visible;}
+  table.cards, table.cards tbody, table.cards tr, table.cards td{display:block;width:100%;}
+  table.cards thead{display:none;}
+  table.cards tr{background:var(--paper-2);border:1px solid var(--border);border-radius:10px;padding:10px 12px;margin-bottom:10px;position:relative;}
+  table.cards tr.late{border-left:4px solid var(--red);}
+  table.cards tr.late td{background:transparent;}
+  table.cards td{border:none;padding:5px 0;display:flex;justify-content:space-between;align-items:flex-start;gap:12px;font-size:14px;}
+  table.cards td::before{content:attr(data-label);color:var(--muted);font-size:11px;letter-spacing:.06em;text-transform:uppercase;flex:0 0 38%;padding-top:2px;}
+  table.cards td.td-primary{display:block;font-size:15.5px;font-weight:500;padding-bottom:6px;padding-right:40px;border-bottom:1px solid var(--border);margin-bottom:4px;}
+  table.cards td.td-primary::before{display:none;}
+  table.cards td.td-actions{justify-content:flex-end;padding-top:8px;}
+  table.cards td.td-actions::before{display:none;}
+  table.cards td.td-check{position:absolute;top:10px;right:12px;padding:0;width:auto;}
+  table.cards td.td-check::before{display:none;}
+  table.cards td.td-check input{width:22px;height:22px;}
+  table.cards td.td-empty{display:block;}
+  table.cards td.td-empty::before{display:none;}
+  table.cards tr:hover td{background:transparent;}
+  /* Tabbalk onderin */
+  .tabbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:50;background:#fff;border-top:1px solid var(--border);padding:6px 4px calc(6px + env(safe-area-inset-bottom));justify-content:space-around;}
+  .tab{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;font-size:11px;font-weight:500;color:var(--muted);background:none;border:none;font-family:var(--font-body);padding:4px 2px;min-height:48px;cursor:pointer;}
+  .tab .tab-ico{font-size:18px;line-height:1;}
+  .tab.active{color:var(--sih-navy);}
+  .tab.active .tab-ico{color:var(--sih-orange-dark);}
+  .install-banner{display:flex;}
 }
+@media(max-width:480px){
+  .grid-4{grid-template-columns:1fr 1fr;}
+  .metric-value{font-size:22px;}
+  .metric-label{font-size:10px;}
+  .page-title{font-size:20px;}
+}
+@media(min-width:601px) and (max-width:900px){
+  .main{padding:20px 20px calc(84px + env(safe-area-inset-bottom));}
+  .grid-2{grid-template-columns:1fr 1fr;}
+  .grid-4{grid-template-columns:repeat(4,1fr);}
+  .cal-grid{display:grid;}
+  .cal-list{display:none;}
+  .cal-cell{min-height:70px;}
+}
+@media(display-mode:standalone){
+  .install-banner{display:none !important;}
+}
+.install-banner{display:none;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;background:var(--sih-navy);color:#fff;border-radius:10px;padding:10px 14px;margin-bottom:14px;font-size:13.5px;}
+.install-banner.hidden{display:none !important;}
+.install-banner .btn{background:var(--sih-orange);border-color:var(--sih-orange);color:#1B2E4B;}
+.offline-badge{display:none;position:fixed;top:calc(8px + env(safe-area-inset-top));right:8px;z-index:70;background:#6B2A1F;color:#fff;font-size:11px;padding:4px 10px;border-radius:12px;}
+.offline-badge.show{display:block;}
 @media print{
   .sidebar,.mobile-bar,.toolbar,.btn,.demo-banner{display:none !important;}
   .main{padding:0;}
@@ -239,7 +319,7 @@ textarea{width:100%;resize:vertical;font-family:var(--font-body);}
 </svg>
       <div class="brand-mark">Holding</div>
       <div class="brand-name">Marketing OS</div>
-      <div class="brand-sub">versie 2.2</div>
+      <div class="brand-sub">versie 2.3</div>
     </div>
     <div class="nav">
       <div class="nav-label">Overzicht</div>
@@ -272,6 +352,14 @@ textarea{width:100%;resize:vertical;font-family:var(--font-body);}
       <div style="display:flex;gap:8px;flex-wrap:wrap;">
         <button class="btn btn-sm" onclick="clearDemoData()">Voorbeelddata wissen</button>
         <button class="btn btn-sm btn-ghost" onclick="dismissDemoBanner()">Verbergen</button>
+      </div>
+    </div>
+
+    <div class="install-banner" id="installBanner">
+      <div><strong>Als app gebruiken</strong><br><span id="installText">Zet Marketing OS op je beginscherm voor snelle toegang, ook zonder verbinding.</span></div>
+      <div style="display:flex;gap:8px;">
+        <button class="btn btn-sm" id="installBtn" onclick="installApp()">Installeren</button>
+        <button class="btn btn-sm btn-ghost" style="color:#fff" onclick="dismissInstall()">Later</button>
       </div>
     </div>
 
@@ -448,6 +536,15 @@ textarea{width:100%;resize:vertical;font-family:var(--font-body);}
 
   </main>
 </div>
+
+<nav class="tabbar" aria-label="Snelle navigatie">
+  <button class="tab active" data-view="dashboard"><span class="tab-ico">&#9670;</span>Overzicht</button>
+  <button class="tab" data-view="campaigns"><span class="tab-ico">&#9654;</span>Campagnes</button>
+  <button class="tab" data-view="tasks"><span class="tab-ico">&#9745;</span>Taken</button>
+  <button class="tab" data-view="calendar"><span class="tab-ico">&#9638;</span>Kalender</button>
+  <button class="tab" id="tabMore"><span class="tab-ico">&#8801;</span>Meer</button>
+</nav>
+<div class="offline-badge" id="offlineBadge">Offline</div>
 
 <!-- ================= MODALS ================= -->
 <div class="overlay" id="orgOverlay"><div class="modal" id="orgModal" role="dialog" aria-modal="true"></div></div>
@@ -666,6 +763,7 @@ function switchView(name){
   document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
   document.getElementById('view-'+name).classList.add('active');
   document.querySelectorAll('.nav-item').forEach(n=>n.classList.toggle('active', n.dataset.view===name));
+  document.querySelectorAll('.tab[data-view]').forEach(n=>n.classList.toggle('active', n.dataset.view===name));
   if(name==='kpi') renderKPICharts();
   closeSidebar();
   window.scrollTo(0,0);
@@ -675,6 +773,8 @@ document.querySelectorAll('.nav-item').forEach(el=>el.addEventListener('click', 
 function openSidebar(){ document.getElementById('sidebar').classList.add('open'); document.getElementById('sidebarBackdrop').classList.add('show'); }
 function closeSidebar(){ document.getElementById('sidebar').classList.remove('open'); document.getElementById('sidebarBackdrop').classList.remove('show'); }
 document.getElementById('hamburger').addEventListener('click', openSidebar);
+document.querySelectorAll('.tab[data-view]').forEach(el=>el.addEventListener('click', ()=>switchView(el.dataset.view)));
+document.getElementById('tabMore').addEventListener('click', openSidebar);
 document.getElementById('sidebarBackdrop').addEventListener('click', closeSidebar);
 
 function buildSidebarOrgTabs(){
@@ -885,7 +985,7 @@ function deleteOrg(id){
    CAMPAGNES
    ===================================================================== */
 const SORT = { camp:{key:'start',dir:-1}, task:{key:'deadline',dir:1}, kpi:{key:'maand',dir:-1}, budget:{key:'budget',dir:-1} };
-function setSort(table, key){ const s=SORT[table]; if(s.key===key) s.dir=-s.dir; else { s.key=key; s.dir=1; } ({camp:renderCampaigns, task:renderTasks, kpi:renderKPI, budget:renderBudget})[table](); }
+function setSort(table, key){ const s=SORT[table]; if(s.key===key) s.dir=-s.dir; else { s.key=key; s.dir=1; } ({camp:renderCampaigns, task:renderTasks, kpi:renderKPI, budget:renderBudget})[table](); labelTables(); }
 function sortRows(list, table, getters){
   const s = SORT[table]; const g = getters[s.key]; if(!g) return list;
   return [...list].sort((a,b)=>{ const va=g(a), vb=g(b); if(va==null && vb==null) return 0; if(va==null) return 1; if(vb==null) return -1; return (va<vb?-1:va>vb?1:0)*s.dir; });
@@ -996,6 +1096,7 @@ function renderTasks(){
       <td><button class="btn btn-ghost btn-sm" onclick="openTaskModal('${esc(t.id)}')">Bewerk</button></td>
     </tr>`;
   }).join('') : `<tr><td colspan="8" class="empty">Geen taken gevonden.</td></tr>`;
+  labelTables();
 }
 function campName(id){ const c=DATA.campaigns.find(x=>x.id===id); return c?c.naam:''; }
 function toggleTask(id, done){ const t=DATA.tasks.find(x=>x.id===id); if(!t) return; t.status = done?'Afgerond':'Open'; saveData(); renderAll(); }
@@ -1162,6 +1263,7 @@ function renderKPI(){
     </tr>`).join('') : `<tr><td colspan="8" class="empty">Nog geen maandmetingen. Voeg ze toe met de knop rechtsboven.</td></tr>`;
 
   if(document.getElementById('view-kpi').classList.contains('active')) renderKPICharts();
+  labelTables();
 }
 let chart1, chart2;
 function renderKPICharts(){
@@ -1273,6 +1375,54 @@ function renderBudget(){
       <td class="num">${c.roi!=null?c.roi.toLocaleString('nl-NL')+'x':'n.v.t.'}</td>
     </tr>`;
   }).join('') : `<tr><td colspan="7" class="empty">Nog geen campagnes.</td></tr>`;
+  labelTables();
+}
+
+/* ---------------- TABELLEN ALS KAARTEN (mobiel) ---------------- */
+function labelTables(){
+  document.querySelectorAll('table[id$="Table"]').forEach(t=>{
+    t.classList.add('cards');
+    const labels=[...t.querySelectorAll('thead th')].map(th=>th.textContent.replace(/[\u25B2\u25BC]/g,'').trim());
+    t.querySelectorAll('tbody tr').forEach(tr=>{
+      const tds=[...tr.children];
+      if(tds.length===1){ tds[0].classList.add('td-empty'); return; }
+      let firstText=true;
+      tds.forEach((td,i)=>{
+        const lab=labels[i]||'';
+        td.setAttribute('data-label',lab);
+        if(td.querySelector('input[type=checkbox]')) td.classList.add('td-check');
+        else if(!lab && td.querySelector('button')) td.classList.add('td-actions');
+        else if(firstText){ td.classList.add('td-primary'); firstText=false; }
+      });
+    });
+  });
+}
+
+/* ---------------- APP-INSTALLATIE EN OFFLINE ---------------- */
+let deferredInstall=null;
+window.addEventListener('beforeinstallprompt', e=>{ e.preventDefault(); deferredInstall=e; showInstallBanner(); });
+function isIos(){ return /iphone|ipad|ipod/i.test(navigator.userAgent) && !window.MSStream; }
+function isStandalone(){ return window.matchMedia('(display-mode: standalone)').matches || navigator.standalone===true; }
+function showInstallBanner(){
+  if(isStandalone()) return;
+  let hidden=false; try{ hidden = localStorage.getItem('sih-install-dismissed')==='1'; }catch(e){}
+  if(hidden) return;
+  const b=document.getElementById('installBanner');
+  if(isIos()){ document.getElementById('installText').textContent='Tik in Safari op Delen en kies "Zet op beginscherm".'; document.getElementById('installBtn').style.display='none'; }
+  b.classList.remove('hidden'); b.style.display='flex';
+}
+async function installApp(){
+  if(!deferredInstall) return;
+  deferredInstall.prompt();
+  const r = await deferredInstall.userChoice;
+  deferredInstall=null;
+  if(r && r.outcome==='accepted'){ document.getElementById('installBanner').classList.add('hidden'); toast('App geïnstalleerd'); }
+}
+function dismissInstall(){ try{ localStorage.setItem('sih-install-dismissed','1'); }catch(e){} document.getElementById('installBanner').classList.add('hidden'); }
+function updateOnline(){ document.getElementById('offlineBadge').classList.toggle('show', !navigator.onLine); }
+window.addEventListener('online', updateOnline); window.addEventListener('offline', updateOnline);
+if('serviceWorker' in navigator && location.protocol.startsWith('http')){
+  window.addEventListener('load', ()=>{ navigator.serviceWorker.register('sw.js').catch(e=>console.warn('Service worker niet geregistreerd', e)); });
 }
 
 /* =====================================================================
@@ -1294,11 +1444,14 @@ function renderAll(){
   renderCalendar();
   renderKPI();
   renderBudget();
+  labelTables();
 }
 
 (function init(){
   loadData();
   renderAll();
+  updateOnline();
+  setTimeout(()=>{ if(isIos()) showInstallBanner(); }, 1500);
   const hash = (location.hash||'').replace('#','');
   if(hash && document.getElementById('view-'+hash)) switchView(hash);
 })();
