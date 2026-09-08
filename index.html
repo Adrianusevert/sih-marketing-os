@@ -6,78 +6,90 @@
 <title>SIH Groep Marketing OS</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Archivo+Expanded:wght@600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
+/* Huisstijl SKG-IKOB: kleuren uit skgikob.nl en het logo.
+   Website gebruikt FF Signa (licentiefont); Source Sans 3 is de vrij beschikbare vervanger, met Segoe UI als terugval. */
 :root{
-  --ink:#161B22;
-  --ink-2:#20293A;
-  --paper:#F6F3EC;
+  --skg-navy:#002E6D;
+  --skg-blue:#19427B;
+  --skg-blue-light:#3D7CC9;
+  --skg-green:#80BC00;
+  --skg-green-dark:#1F5B00;
+  --skg-pale:#D8E5F4;
+  --skg-pale-2:#EEF3F9;
+
+  --ink:var(--skg-blue);
+  --ink-2:var(--skg-navy);
+  --paper:#F3F6FA;
   --paper-2:#FFFFFF;
-  --steel:#3D5A73;
-  --steel-light:#6B8CA6;
-  --amber:#C97B3D;
-  --green:#5B8266;
-  --plum:#7C5C8C;
-  --red:#B5533C;
-  --border:#DDD7C8;
-  --border-dark:#2B3444;
-  --text:#1B2430;
-  --muted:#7A7565;
-  --font-display:'Archivo Expanded','Archivo',system-ui,sans-serif;
-  --font-head:'Archivo',system-ui,sans-serif;
-  --font-body:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
-  --font-mono:'IBM Plex Mono',ui-monospace,Consolas,monospace;
+  --steel:var(--skg-blue);
+  --steel-light:var(--skg-blue-light);
+  --amber:#E58A1F;
+  --green:#5E9400;
+  --plum:var(--skg-blue-light);
+  --red:#C8321E;
+  --border:#D6DFEA;
+  --border-dark:#D6DFEA;
+  --text:#1B2E4B;
+  --muted:#5F6F85;
+  --font-display:'Source Sans 3','Segoe UI',Arial,sans-serif;
+  --font-head:'Source Sans 3','Segoe UI',Arial,sans-serif;
+  --font-body:'Source Sans 3','Segoe UI',Arial,sans-serif;
+  --font-mono:'Source Sans 3','Segoe UI',Arial,sans-serif;
 }
 *{box-sizing:border-box;}
 html{-webkit-text-size-adjust:100%;}
-body{margin:0;font-family:var(--font-body);background:var(--paper);color:var(--text);}
+body{margin:0;font-family:var(--font-body);background:var(--paper);color:var(--text);font-size:14px;}
+.logo{display:block;width:150px;height:auto;margin-bottom:8px;}
+.mobile-bar .logo{width:110px;margin:0;}
 .app{display:flex;min-height:100vh;}
 
 /* ---------- SIDEBAR ---------- */
-.sidebar{width:236px;flex-shrink:0;background:var(--ink);color:#EDE9DE;display:flex;flex-direction:column;position:sticky;top:0;height:100vh;overflow-y:auto;}
-.brand{padding:22px 20px 16px;border-bottom:1px solid var(--border-dark);}
-.brand-mark{font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;color:var(--steel-light);text-transform:uppercase;}
-.brand-name{font-family:var(--font-display);font-size:21px;font-weight:700;margin-top:4px;letter-spacing:.01em;}
-.brand-sub{font-size:11px;color:#8A93A6;margin-top:2px;font-family:var(--font-mono);}
+.sidebar{width:248px;flex-shrink:0;background:#FFFFFF;color:var(--text);display:flex;flex-direction:column;position:sticky;top:0;height:100vh;overflow-y:auto;border-right:1px solid var(--border);}
+.brand{padding:20px 18px 14px;border-bottom:4px solid var(--skg-green);}
+.brand-mark{font-size:11px;letter-spacing:.12em;color:var(--skg-blue-light);text-transform:uppercase;font-weight:600;}
+.brand-name{font-family:var(--font-display);font-size:19px;font-weight:700;margin-top:2px;color:var(--skg-navy);letter-spacing:.01em;}
+.brand-sub{font-size:11px;color:var(--muted);margin-top:2px;}
 
 .nav{padding:14px 10px;flex:1;}
-.nav-label{font-family:var(--font-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#6B7488;padding:12px 10px 6px;}
-.nav-item{display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:4px;font-size:13.5px;font-weight:500;color:#C7CBD6;cursor:pointer;border-left:3px solid transparent;background:none;border-top:none;border-right:none;border-bottom:none;width:100%;text-align:left;font-family:var(--font-body);}
-.nav-item:hover{background:rgba(255,255,255,.05);color:#fff;}
-.nav-item.active{background:rgba(255,255,255,.07);color:#fff;border-left:3px solid var(--amber);}
-.nav-icon{width:16px;text-align:center;font-family:var(--font-mono);font-size:12px;opacity:.8;}
+.nav-label{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);padding:12px 10px 6px;font-weight:600;}
+.nav-item{display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:3px;font-size:14.5px;font-weight:600;color:var(--skg-blue);cursor:pointer;border-left:3px solid transparent;background:none;border-top:none;border-right:none;border-bottom:none;width:100%;text-align:left;font-family:var(--font-body);}
+.nav-item:hover{background:var(--skg-pale-2);color:var(--skg-navy);}
+.nav-item.active{background:var(--skg-pale-2);color:var(--skg-navy);border-left:3px solid var(--skg-green);}
+.nav-icon{width:16px;text-align:center;font-size:11px;color:var(--skg-green);}
 
 .org-tabs{padding:4px 10px 14px;}
-.org-chip{display:flex;align-items:center;gap:8px;padding:7px 10px;font-size:12.5px;color:#C7CBD6;border-radius:4px;cursor:pointer;margin-bottom:2px;}
-.org-chip:hover{background:rgba(255,255,255,.05);}
+.org-chip{display:flex;align-items:center;gap:8px;padding:7px 10px;font-size:13px;color:var(--text);border-radius:3px;cursor:pointer;margin-bottom:2px;}
+.org-chip:hover{background:var(--skg-pale-2);}
 .org-dot{width:8px;height:8px;border-radius:1px;flex-shrink:0;}
 
-.sidebar-tools{padding:10px 10px 6px;border-top:1px solid var(--border-dark);display:flex;flex-direction:column;gap:4px;}
-.tool-btn{background:transparent;border:1px solid var(--border-dark);color:#C7CBD6;font-family:var(--font-body);font-size:12px;padding:7px 10px;border-radius:4px;cursor:pointer;text-align:left;}
-.tool-btn:hover{border-color:var(--steel-light);color:#fff;}
-.sidebar-foot{padding:12px 18px 16px;font-family:var(--font-mono);font-size:10.5px;color:#5B6478;line-height:1.5;}
+.sidebar-tools{padding:10px 10px 6px;border-top:1px solid var(--border);display:flex;flex-direction:column;gap:4px;}
+.tool-btn{background:#fff;border:1px solid var(--border);color:var(--skg-blue);font-family:var(--font-body);font-size:12.5px;font-weight:600;padding:7px 10px;border-radius:3px;cursor:pointer;text-align:left;}
+.tool-btn:hover{border-color:var(--skg-blue-light);background:var(--skg-pale-2);}
+.sidebar-foot{padding:12px 18px 16px;font-size:11px;color:var(--muted);line-height:1.5;}
 
 /* mobile header */
-.mobile-bar{display:none;position:sticky;top:0;z-index:50;background:var(--ink);color:#EDE9DE;padding:12px 16px;align-items:center;justify-content:space-between;}
+.mobile-bar{display:none;position:sticky;top:0;z-index:50;background:#fff;color:var(--skg-navy);padding:10px 16px;align-items:center;justify-content:space-between;border-bottom:4px solid var(--skg-green);}
 .mobile-bar .brand-name{font-size:16px;margin:0;}
-.hamburger{background:none;border:1px solid var(--border-dark);color:#EDE9DE;font-size:18px;padding:4px 10px;border-radius:4px;cursor:pointer;}
+.hamburger{background:none;border:1px solid var(--border);color:var(--skg-blue);font-size:18px;padding:4px 10px;border-radius:3px;cursor:pointer;}
 
 /* ---------- MAIN ---------- */
 .main{flex:1;min-width:0;padding:28px 34px 60px;}
 .topbar{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:22px;gap:12px;flex-wrap:wrap;}
-.page-title{font-family:var(--font-display);font-size:26px;font-weight:700;margin:0;}
+.page-title{font-family:var(--font-display);font-size:28px;font-weight:700;margin:0;color:var(--skg-navy);}
 .page-sub{color:var(--muted);font-size:13.5px;margin-top:4px;}
 .view{display:none;}
 .view.active{display:block;}
 
-.demo-banner{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;background:#F5E8DA;border:1px solid #E4C7A6;color:#7A4A1E;border-radius:6px;padding:10px 14px;margin-bottom:20px;font-size:13px;}
-.demo-banner strong{font-family:var(--font-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;margin-right:6px;}
+.demo-banner{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;background:#F2F8E3;border:1px solid #C5DE8A;border-left:4px solid var(--skg-green);color:var(--skg-green-dark);border-radius:3px;padding:10px 14px;margin-bottom:20px;font-size:13.5px;}
+.demo-banner strong{font-size:11px;letter-spacing:.08em;text-transform:uppercase;margin-right:6px;}
 
-.btn{font-family:var(--font-body);font-size:13px;font-weight:600;padding:8px 14px;border-radius:4px;border:1px solid var(--border);background:var(--paper-2);color:var(--text);cursor:pointer;display:inline-flex;align-items:center;gap:6px;}
+.btn{font-family:var(--font-body);font-size:13.5px;font-weight:600;padding:8px 14px;border-radius:3px;border:1px solid var(--border);background:var(--paper-2);color:var(--skg-blue);cursor:pointer;display:inline-flex;align-items:center;gap:6px;}
 .btn:hover{border-color:var(--steel);}
-.btn-primary{background:var(--ink);color:#fff;border-color:var(--ink);}
-.btn-primary:hover{background:var(--ink-2);}
-.btn-amber{background:var(--amber);color:#fff;border-color:var(--amber);}
+.btn-primary{background:var(--skg-blue);color:#fff;border-color:var(--skg-blue);}
+.btn-primary:hover{background:var(--skg-navy);border-color:var(--skg-navy);}
+.btn-amber{background:var(--skg-green);color:#fff;border-color:var(--skg-green);}
 .btn-danger{color:var(--red);border-color:var(--red);}
 .btn-sm{padding:5px 10px;font-size:12px;}
 .btn-ghost{background:transparent;border:none;color:var(--muted);}
@@ -90,23 +102,23 @@ body{margin:0;font-family:var(--font-body);background:var(--paper);color:var(--t
 .grid-2{grid-template-columns:repeat(2,1fr);}
 @media(max-width:1100px){.grid-4{grid-template-columns:repeat(2,1fr);}.grid-3{grid-template-columns:repeat(2,1fr);}}
 
-.card{background:var(--paper-2);border:1px solid var(--border);border-radius:6px;padding:16px 18px;}
-.metric-label{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);}
-.metric-value{font-family:var(--font-mono);font-size:26px;font-weight:600;margin-top:6px;color:var(--text);}
+.card{background:var(--paper-2);border:1px solid var(--border);border-radius:3px;padding:16px 18px;}
+.metric-label{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600;}
+.metric-value{font-family:var(--font-display);font-size:30px;font-weight:700;margin-top:4px;color:var(--skg-navy);}
 .metric-delta{font-size:12px;margin-top:4px;font-weight:600;}
 .metric-delta.up{color:var(--green);}
 .metric-delta.down{color:var(--red);}
 .metric-delta.neutral{color:var(--muted);}
 
-.section-title{font-family:var(--font-head);font-size:15px;font-weight:700;margin:0 0 12px;display:flex;align-items:center;justify-content:space-between;gap:8px;}
+.section-title{font-family:var(--font-head);font-size:16px;font-weight:700;margin:0 0 12px;display:flex;align-items:center;justify-content:space-between;gap:8px;color:var(--skg-navy);}
 .section-block{margin-bottom:26px;}
 
-.chip{display:inline-flex;align-items:center;gap:5px;font-family:var(--font-mono);font-size:10.5px;font-weight:600;padding:3px 8px;border-radius:3px;text-transform:uppercase;letter-spacing:.03em;white-space:nowrap;}
-.chip-green{background:#E7EEE4;color:var(--green);}
-.chip-amber{background:#F5E8DA;color:var(--amber);}
-.chip-red{background:#F3E1DA;color:var(--red);}
-.chip-gray{background:#EDEAE1;color:var(--muted);}
-.chip-steel{background:#E1E9EE;color:var(--steel);}
+.chip{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:700;padding:3px 8px;border-radius:2px;text-transform:uppercase;letter-spacing:.04em;white-space:nowrap;}
+.chip-green{background:#EAF4D3;color:var(--skg-green-dark);}
+.chip-amber{background:#FBEBD5;color:#9A5A0A;}
+.chip-red{background:#F8DEDA;color:var(--red);}
+.chip-gray{background:#E9EEF4;color:var(--muted);}
+.chip-steel{background:var(--skg-pale);color:var(--skg-blue);}
 
 .row-list{display:flex;flex-direction:column;}
 .list-row{display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--border);gap:12px;}
@@ -123,21 +135,21 @@ body{margin:0;font-family:var(--font-body);background:var(--paper);color:var(--t
 
 /* table */
 table{width:100%;border-collapse:collapse;font-size:13px;}
-th{text-align:left;font-family:var(--font-mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600;padding:8px 10px;border-bottom:1px solid var(--border);white-space:nowrap;}
+th{text-align:left;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#fff;background:var(--skg-blue);font-weight:600;padding:9px 10px;border-bottom:1px solid var(--skg-blue);white-space:nowrap;}
 th.sortable{cursor:pointer;user-select:none;}
-th.sortable:hover{color:var(--text);}
+th.sortable:hover{background:var(--skg-navy);}
 th.sorted-asc::after{content:' \25B2';font-size:8px;}
 th.sorted-desc::after{content:' \25BC';font-size:8px;}
 td{padding:10px 10px;border-bottom:1px solid var(--border);vertical-align:top;}
-tr:hover td{background:#FBFAF6;}
-.num{font-family:var(--font-mono);}
-.table-wrap{overflow-x:auto;background:var(--paper-2);border:1px solid var(--border);border-radius:6px;}
+tr:hover td{background:var(--skg-pale-2);}
+.num{font-variant-numeric:tabular-nums;}
+.table-wrap{overflow-x:auto;background:var(--paper-2);border:1px solid var(--border);border-radius:3px;}
 tr.late td{background:#FBF1EE;}
 
 .toolbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;gap:10px;flex-wrap:wrap;}
 .filters{display:flex;gap:8px;flex-wrap:wrap;}
 select,input[type=text],input[type=number],input[type=date],input[type=month],input[type=search],textarea{font-family:var(--font-body);font-size:13px;padding:7px 10px;border:1px solid var(--border);border-radius:4px;background:#fff;color:var(--text);}
-select:focus,input:focus,textarea:focus{outline:2px solid var(--steel-light);outline-offset:0;}
+select:focus,input:focus,textarea:focus{outline:2px solid var(--skg-green);outline-offset:0;}
 label{font-size:12px;font-weight:600;color:var(--muted);display:block;margin-bottom:4px;}
 .field{margin-bottom:12px;}
 .field input,.field select,.field textarea{width:100%;}
@@ -148,35 +160,35 @@ textarea{width:100%;resize:vertical;font-family:var(--font-body);}
 /* modal */
 .overlay{position:fixed;inset:0;background:rgba(22,27,34,.55);display:none;align-items:flex-start;justify-content:center;z-index:100;padding:40px 20px;overflow-y:auto;}
 .overlay.active{display:flex;}
-.modal{background:var(--paper-2);border-radius:8px;width:100%;max-width:560px;padding:24px 26px;border:1px solid var(--border);}
+.modal{background:var(--paper-2);border-radius:3px;width:100%;max-width:560px;padding:24px 26px;border-top:4px solid var(--skg-green);}
 .modal-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;}
-.modal-head h3{margin:0;font-family:var(--font-head);font-size:17px;}
+.modal-head h3{margin:0;font-family:var(--font-head);font-size:18px;color:var(--skg-navy);}
 .modal-foot{display:flex;justify-content:space-between;margin-top:18px;gap:8px;flex-wrap:wrap;}
 
-.pbar{height:6px;border-radius:3px;background:#EDEAE1;overflow:hidden;}
+.pbar{height:7px;border-radius:2px;background:#E4EAF2;overflow:hidden;}
 .pbar-fill{height:100%;border-radius:3px;}
 
 /* calendar */
 .cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:6px;overflow:hidden;}
-.cal-dow{background:var(--ink);color:#C7CBD6;font-family:var(--font-mono);font-size:10px;text-transform:uppercase;text-align:center;padding:6px 0;}
-.cal-cell{background:var(--paper-2);min-height:92px;padding:6px;font-size:11px;cursor:pointer;}
+.cal-dow{background:var(--skg-blue);color:#fff;font-size:11px;text-transform:uppercase;text-align:center;padding:6px 0;font-weight:600;letter-spacing:.06em;}
+.cal-cell{background:var(--paper-2);min-height:92px;padding:6px;font-size:11.5px;cursor:pointer;}
 .cal-cell:hover{background:#FBFAF6;}
-.cal-cell.other-month{background:#F0EEE6;color:#B8B2A0;}
-.cal-cell.today .cal-daynum{background:var(--amber);color:#fff;border-radius:3px;padding:0 4px;display:inline-block;}
+.cal-cell.other-month{background:#F3F6FA;color:#A9B4C3;}
+.cal-cell.today .cal-daynum{font-weight:700;font-size:11.5px;margin-bottom:4px;color:var(--skg-blue);}
 .cal-daynum{font-family:var(--font-mono);font-weight:600;font-size:11px;margin-bottom:4px;}
 .cal-item{border-radius:3px;padding:2px 5px;margin-bottom:3px;font-size:10.5px;font-weight:600;line-height:1.3;color:#fff;cursor:pointer;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
 .cal-list{display:none;}
 
 .empty{padding:40px 20px;text-align:center;color:var(--muted);font-size:13px;}
 .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);}
-.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--ink);color:#fff;padding:10px 18px;border-radius:6px;font-size:13px;z-index:200;opacity:0;transition:opacity .2s;pointer-events:none;}
+.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--skg-navy);color:#fff;padding:10px 18px;border-radius:3px;font-size:13.5px;z-index:200;opacity:0;transition:opacity .2s;pointer-events:none;}
 .toast.show{opacity:1;}
 
 /* ---------- RESPONSIVE ---------- */
 @media(max-width:900px){
   .app{flex-direction:column;}
   .mobile-bar{display:flex;}
-  .sidebar{position:fixed;top:0;left:0;height:100vh;width:260px;transform:translateX(-100%);transition:transform .2s;z-index:60;box-shadow:2px 0 12px rgba(0,0,0,.3);}
+  .sidebar{position:fixed;top:0;left:0;height:100vh;width:270px;transform:translateX(-100%);transition:transform .2s;z-index:60;box-shadow:2px 0 12px rgba(0,46,109,.25);}
   .sidebar.open{transform:translateX(0);}
   .sidebar-backdrop{display:none;position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:55;}
   .sidebar-backdrop.show{display:block;}
@@ -198,7 +210,23 @@ textarea{width:100%;resize:vertical;font-family:var(--font-body);}
 </head>
 <body>
 <div class="mobile-bar">
-  <div><div class="brand-mark">SIH Groep</div><div class="brand-name">Marketing OS</div></div>
+  <div style="display:flex;align-items:center;gap:12px;"><svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 300" role="img" aria-label="SKG-IKOB Certificatie">
+<polyline fill="#FFFFFF" points="80.955,30.590 80.955,148.615 217.994,137.039 217.994,0 80.955,30.590"/>
+<polyline fill="#3D7CC9" points="0,258.306 0,97.163 137.037,74.964 137.037,265.415 0,258.306"/>
+<polyline fill="#80BC00" points="217.994,0 80.955,30.590 80.955,84.049 137.037,74.964 137.037,143.878 217.994,137.039 217.994,0"/>
+<polyline fill="#1F5B00" points="137.037,74.964 80.955,84.049 80.955,148.615 137.037,143.878 137.037,74.964"/>
+<g fill="#002E6D">
+<path d="M162.670364,216.286621v-7.84082c0,0,8.190918,2.030273,14.491699,2.030273c4.270508,0,11.201172-1.399414,11.201172-6.860352c0-9.731445-26.042969-3.920898-26.042969-21.212891c0-11.480469,9.661133-15.050781,20.442383-15.050781c6.790527,0,12.601074,1.400391,12.601074,1.400391v7.560547c0,0-5.600586-1.330078-11.621094-1.330078c-3.780273,0-10.851074,1.048828-10.851074,6.230469c0,10.78125,26.25293,2.939453,26.25293,21.492188c0,11.550781-11.55127,15.332031-21.072266,15.332031C169.321243,218.037598,162.670364,216.286621,162.670364,216.286621z"/>
+<path d="M237.643509,217.196777l-19.8125-23.3125v23.3125h-9.94043v-49.004883h9.94043v23.732422l19.041992-23.732422h12.741211l-21.421875,23.942383l23.171875,25.0625H237.643509z"/>
+<path d="M278.168884,217.967285c-19.041992,0-26.113266-10.291016-26.113266-25.273438c0-26.953125,24.993149-25.272461,28.493149-25.272461c5.950195,0,12.041016,0.910156,12.041016,0.910156v7.630859c0,0-6.44043-0.839844-11.760742-0.839844c-9.311523,0-18.0625,2.520508-18.0625,17.571289c0,12.391602,4.34082,17.501953,16.311523,17.501953c3.081055,0,4.691406-0.349609,4.691406-0.349609v-15.261719h10.010742v21.351562C293.780212,215.936035,285.449158,217.967285,278.168884,217.967285z"/>
+<path d="M302.875916,200.115723v-7.912109h18.691406v7.912109H302.875916z"/>
+<path d="M332.345642,217.196777v-49.004883h10.151367v49.004883H332.345642z"/>
+<path d="M384.007751,217.196777l-19.811523-23.3125v23.3125h-9.941406v-49.004883h9.941406v23.732422l19.041992-23.732422h12.741211l-21.422852,23.942383l23.172852,25.0625H384.007751z"/>
+<path d="M422.922791,218.246582c-14.771484,0-24.501953-8.960938-24.501953-25.552734s9.730469-25.552734,24.501953-25.552734s24.50293,8.960938,24.50293,25.552734S437.694275,218.246582,422.922791,218.246582zM422.853455,174.70166c-11.341797,0-13.511719,8.541016-13.511719,18.0625s2.169922,17.851562,13.511719,17.851562c11.411133,0,13.651367-8.470703,13.651367-17.992188C436.504822,183.103027,434.264587,174.70166,422.853455,174.70166z"/>
+<path d="M474.932556,217.196777H457.15033v-49.004883h17.782227c7.770508,0,17.851562,1.400391,17.851562,11.761719c0,6.650391-3.920898,10.009766-9.661133,11.480469v0.980469c0,0,11.061523,0.55957,11.061523,11.480469C494.184509,218.246582,476.33197,217.196777,474.932556,217.196777zM473.952087,188.844238c2.730469,0,8.331055,0.208984,8.331055-7.000977c0-7.280273-5.600586-7.071289-8.331055-7.071289h-7.000977v14.072266H473.952087zM474.652283,210.266113c2.870117,0,8.680664,0.279297,8.680664-7.28125s-5.810547-7.280273-8.680664-7.280273h-7.701172v14.561523H474.652283z"/>
+</g>
+<text x="162" y="266" fill="#002E6D" font-family="'Source Sans 3','Segoe UI',Arial,sans-serif" font-size="27" letter-spacing="0.5">Certificatie</text>
+</svg><div class="brand-name">Marketing OS</div></div>
   <button class="hamburger" id="hamburger" aria-label="Menu openen">&#9776;</button>
 </div>
 <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
@@ -207,9 +235,26 @@ textarea{width:100%;resize:vertical;font-family:var(--font-body);}
   <!-- ================= SIDEBAR ================= -->
   <nav class="sidebar" id="sidebar" aria-label="Hoofdnavigatie">
     <div class="brand">
+      <svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 300" role="img" aria-label="SKG-IKOB Certificatie">
+<polyline fill="#FFFFFF" points="80.955,30.590 80.955,148.615 217.994,137.039 217.994,0 80.955,30.590"/>
+<polyline fill="#3D7CC9" points="0,258.306 0,97.163 137.037,74.964 137.037,265.415 0,258.306"/>
+<polyline fill="#80BC00" points="217.994,0 80.955,30.590 80.955,84.049 137.037,74.964 137.037,143.878 217.994,137.039 217.994,0"/>
+<polyline fill="#1F5B00" points="137.037,74.964 80.955,84.049 80.955,148.615 137.037,143.878 137.037,74.964"/>
+<g fill="#002E6D">
+<path d="M162.670364,216.286621v-7.84082c0,0,8.190918,2.030273,14.491699,2.030273c4.270508,0,11.201172-1.399414,11.201172-6.860352c0-9.731445-26.042969-3.920898-26.042969-21.212891c0-11.480469,9.661133-15.050781,20.442383-15.050781c6.790527,0,12.601074,1.400391,12.601074,1.400391v7.560547c0,0-5.600586-1.330078-11.621094-1.330078c-3.780273,0-10.851074,1.048828-10.851074,6.230469c0,10.78125,26.25293,2.939453,26.25293,21.492188c0,11.550781-11.55127,15.332031-21.072266,15.332031C169.321243,218.037598,162.670364,216.286621,162.670364,216.286621z"/>
+<path d="M237.643509,217.196777l-19.8125-23.3125v23.3125h-9.94043v-49.004883h9.94043v23.732422l19.041992-23.732422h12.741211l-21.421875,23.942383l23.171875,25.0625H237.643509z"/>
+<path d="M278.168884,217.967285c-19.041992,0-26.113266-10.291016-26.113266-25.273438c0-26.953125,24.993149-25.272461,28.493149-25.272461c5.950195,0,12.041016,0.910156,12.041016,0.910156v7.630859c0,0-6.44043-0.839844-11.760742-0.839844c-9.311523,0-18.0625,2.520508-18.0625,17.571289c0,12.391602,4.34082,17.501953,16.311523,17.501953c3.081055,0,4.691406-0.349609,4.691406-0.349609v-15.261719h10.010742v21.351562C293.780212,215.936035,285.449158,217.967285,278.168884,217.967285z"/>
+<path d="M302.875916,200.115723v-7.912109h18.691406v7.912109H302.875916z"/>
+<path d="M332.345642,217.196777v-49.004883h10.151367v49.004883H332.345642z"/>
+<path d="M384.007751,217.196777l-19.811523-23.3125v23.3125h-9.941406v-49.004883h9.941406v23.732422l19.041992-23.732422h12.741211l-21.422852,23.942383l23.172852,25.0625H384.007751z"/>
+<path d="M422.922791,218.246582c-14.771484,0-24.501953-8.960938-24.501953-25.552734s9.730469-25.552734,24.501953-25.552734s24.50293,8.960938,24.50293,25.552734S437.694275,218.246582,422.922791,218.246582zM422.853455,174.70166c-11.341797,0-13.511719,8.541016-13.511719,18.0625s2.169922,17.851562,13.511719,17.851562c11.411133,0,13.651367-8.470703,13.651367-17.992188C436.504822,183.103027,434.264587,174.70166,422.853455,174.70166z"/>
+<path d="M474.932556,217.196777H457.15033v-49.004883h17.782227c7.770508,0,17.851562,1.400391,17.851562,11.761719c0,6.650391-3.920898,10.009766-9.661133,11.480469v0.980469c0,0,11.061523,0.55957,11.061523,11.480469C494.184509,218.246582,476.33197,217.196777,474.932556,217.196777zM473.952087,188.844238c2.730469,0,8.331055,0.208984,8.331055-7.000977c0-7.280273-5.600586-7.071289-8.331055-7.071289h-7.000977v14.072266H473.952087zM474.652283,210.266113c2.870117,0,8.680664,0.279297,8.680664-7.28125s-5.810547-7.280273-8.680664-7.280273h-7.701172v14.561523H474.652283z"/>
+</g>
+<text x="162" y="266" fill="#002E6D" font-family="'Source Sans 3','Segoe UI',Arial,sans-serif" font-size="27" letter-spacing="0.5">Certificatie</text>
+</svg>
       <div class="brand-mark">SIH Groep</div>
       <div class="brand-name">Marketing OS</div>
-      <div class="brand-sub">versie 2.0</div>
+      <div class="brand-sub">versie 2.1</div>
     </div>
     <div class="nav">
       <div class="nav-label">Overzicht</div>
@@ -456,8 +501,8 @@ const STORAGE_KEY = 'sih-marketing-os-v2';
 const SCHEMA_VERSION = 2;
 let DATA = null;
 
-const ORG_PALETTE = ['#3D5A73','#C97B3D','#5B8266','#7C5C8C','#B5533C','#2F6F6B','#8A6D3B','#4A5568'];
-const CAL_TYPES = { 'Social':'#3D5A73','Nieuwsbrief':'#C97B3D','Blog':'#5B8266','Event':'#7C5C8C','Beurs':'#B5533C','Advertentie':'#8A6D3B','Website':'#4A5568','Webinar':'#2F6F6B','Persbericht':'#6B4E71','Overig':'#7A7565' };
+const ORG_PALETTE = ['#19427B','#80BC00','#3D7CC9','#1F5B00','#E58A1F','#7C5C8C','#2F6F6B','#5F6F85'];
+const CAL_TYPES = { 'Social':'#19427B','Nieuwsbrief':'#3D7CC9','Blog':'#80BC00','Event':'#1F5B00','Beurs':'#E58A1F','Advertentie':'#7C5C8C','Website':'#2F6F6B','Webinar':'#002E6D','Persbericht':'#8A6D3B','Overig':'#5F6F85' };
 const CAMP_STATUS = ['Gepland','Actief','Afgerond','Gepauzeerd'];
 const TASK_STATUS = ['Open','Bezig','Afgerond'];
 const PRIO = ['Hoog','Midden','Laag'];
@@ -472,7 +517,7 @@ function fmtMonth(m){ if(!m) return ''; const dt=new Date(m+'-01T00:00:00'); if(
 function isoLocal(d){ return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'); }
 function todayIso(){ return isoLocal(new Date()); }
 function daysUntil(d){ if(!d) return null; const t=new Date(d+'T00:00:00'); if(isNaN(t)) return null; const n=new Date(); n.setHours(0,0,0,0); return Math.round((t-n)/86400000); }
-function orgColor(orgId){ const o=DATA.orgs.find(x=>x.id===orgId); return (o&&o.kleur)||'#7A7565'; }
+function orgColor(orgId){ const o=DATA.orgs.find(x=>x.id===orgId); return (o&&o.kleur)||'#5F6F85'; }
 function orgName(id){ const o=DATA.orgs.find(x=>x.id===id); return o?o.naam:'Onbekend'; }
 function orgDot(orgId){ return `<span style="color:${orgColor(orgId)}">&#9679;</span>`; }
 function val(id){ const el=document.getElementById(id); return el?el.value:''; }
@@ -484,10 +529,10 @@ function lastMonths(n){ const out=[]; const now=new Date(); for(let i=n-1;i>=0;i
 /* ---------------- SEED DATA (fictief) ---------------- */
 function seedData(){
   const orgs = [
-    { id:'org_ikob', naam:'SKG-IKOB', kleur:'#3D5A73', type:'Certificatie en inspectie (bouw)', verantwoordelijke:'Marketing SKG-IKOB', budget:45000, doelstellingen:'Merkbekendheid vergroten in de bouw- en installatiesector en leads genereren voor certificatietrajecten.', website:'skg-ikob.nl', notities:'Focus op vakbeurzen en vakmedia.' },
-    { id:'org_bris', naam:'BRIS', kleur:'#C97B3D', type:'Kennis- en informatieplatform bouwregelgeving', verantwoordelijke:'Marketing BRIS', budget:30000, doelstellingen:'Positioneren als kennisplatform voor bouwregelgeving en groei van nieuwsbriefabonnees.', website:'bris.nl', notities:'Contentmarketing en webinars zijn de kernkanalen.' },
-    { id:'org_keurhuis', naam:'Keurhuis Nederland', kleur:'#5B8266', type:'Keuringsinstantie', verantwoordelijke:'Marketing Keurhuis', budget:25000, doelstellingen:'Lokale zichtbaarheid vergroten en klanttevredenheid omzetten in reviews en doorverwijzingen.', website:'keurhuis.nl', notities:'Sterk regionaal, veel mond-tot-mondreclame.' },
-    { id:'org_bc', naam:'Building Changes', kleur:'#7C5C8C', type:'Advies en innovatie bouwsector', verantwoordelijke:'Marketing Building Changes', budget:20000, doelstellingen:'Autoriteit opbouwen rond duurzame bouwinnovatie.', website:'buildingchanges.nl', notities:'Nieuw merk binnen de groep, focus op contentopbouw.' }
+    { id:'org_ikob', naam:'SKG-IKOB', kleur:'#19427B', type:'Certificatie en inspectie (bouw)', verantwoordelijke:'Marketing SKG-IKOB', budget:45000, doelstellingen:'Merkbekendheid vergroten in de bouw- en installatiesector en leads genereren voor certificatietrajecten.', website:'skg-ikob.nl', notities:'Focus op vakbeurzen en vakmedia.' },
+    { id:'org_bris', naam:'BRIS', kleur:'#80BC00', type:'Kennis- en informatieplatform bouwregelgeving', verantwoordelijke:'Marketing BRIS', budget:30000, doelstellingen:'Positioneren als kennisplatform voor bouwregelgeving en groei van nieuwsbriefabonnees.', website:'bris.nl', notities:'Contentmarketing en webinars zijn de kernkanalen.' },
+    { id:'org_keurhuis', naam:'Keurhuis Nederland', kleur:'#3D7CC9', type:'Keuringsinstantie', verantwoordelijke:'Marketing Keurhuis', budget:25000, doelstellingen:'Lokale zichtbaarheid vergroten en klanttevredenheid omzetten in reviews en doorverwijzingen.', website:'keurhuis.nl', notities:'Sterk regionaal, veel mond-tot-mondreclame.' },
+    { id:'org_bc', naam:'Building Changes', kleur:'#1F5B00', type:'Advies en innovatie bouwsector', verantwoordelijke:'Marketing Building Changes', budget:20000, doelstellingen:'Autoriteit opbouwen rond duurzame bouwinnovatie.', website:'buildingchanges.nl', notities:'Nieuw merk binnen de groep, focus op contentopbouw.' }
   ];
 
   const campaigns = [
@@ -559,7 +604,8 @@ function loadData(){
 function migrate(d){
   d.meta = d.meta || { demo:false, demoBannerHidden:true };
   d.orgs = d.orgs || []; d.campaigns = d.campaigns || []; d.tasks = d.tasks || []; d.calendar = d.calendar || []; d.kpi = d.kpi || [];
-  d.orgs.forEach((o,i)=>{ if(!o.kleur) o.kleur = ORG_PALETTE[i % ORG_PALETTE.length]; });
+  const OLD_COLORS = { '#3D5A73':'#19427B', '#C97B3D':'#80BC00', '#5B8266':'#3D7CC9', '#7C5C8C':'#1F5B00' };
+  d.orgs.forEach((o,i)=>{ if(!o.kleur) o.kleur = ORG_PALETTE[i % ORG_PALETTE.length]; else if(OLD_COLORS[o.kleur.toUpperCase()]) o.kleur = OLD_COLORS[o.kleur.toUpperCase()]; });
   d.tasks.forEach(t=>{ if(!t.orgId && t.campagneId){ const c=d.campaigns.find(x=>x.id===t.campagneId); if(c) t.orgId=c.orgId; } });
   d.schema = SCHEMA_VERSION;
   return d;
@@ -764,14 +810,14 @@ function renderDashboard(){
 
   const alerts = buildAlerts();
   document.getElementById('dashAlertCount').textContent = alerts.length;
-  const colors = { red:'var(--red)', amber:'var(--amber)', gray:'#B8B2A0' };
+  const colors = { red:'var(--red)', amber:'var(--amber)', gray:'#A9B4C3' };
   document.getElementById('dashAlerts').innerHTML = alerts.length ? alerts.slice(0,8).map(a=>`
     <div class="alert-row" style="cursor:pointer" onclick="switchView('${a.view}')"><span class="alert-dot" style="background:${colors[a.level]}"></span><span>${esc(a.text)}</span></div>`).join('') + (alerts.length>8?`<div class="page-sub" style="padding-top:8px;">en nog ${alerts.length-8} meer</div>`:'') : '<div class="empty">Geen aandachtspunten. Alles loopt volgens planning.</div>';
 
   const today = todayIso();
   const horizon = isoLocal(new Date(Date.now()+30*86400000));
   const upcoming = [];
-  DATA.calendar.filter(c=>c.datum>=today && c.datum<=horizon).forEach(c=>upcoming.push({ datum:c.datum, label:c.titel, sub:`${c.type} &middot; ${esc(orgName(c.orgId))}`, color:CAL_TYPES[c.type]||'#7A7565', onclick:`openCalModal('${esc(c.id)}')` }));
+  DATA.calendar.filter(c=>c.datum>=today && c.datum<=horizon).forEach(c=>upcoming.push({ datum:c.datum, label:c.titel, sub:`${c.type} &middot; ${esc(orgName(c.orgId))}`, color:CAL_TYPES[c.type]||'#5F6F85', onclick:`openCalModal('${esc(c.id)}')` }));
   DATA.campaigns.filter(c=>c.start>=today && c.start<=horizon).forEach(c=>upcoming.push({ datum:c.start, label:'Start: '+c.naam, sub:`Campagne &middot; ${esc(orgName(c.orgId))}`, color:orgColor(c.orgId), onclick:`openCampaignModal('${esc(c.id)}')` }));
   DATA.campaigns.filter(c=>c.eind>=today && c.eind<=horizon && c.status!=='Afgerond').forEach(c=>upcoming.push({ datum:c.eind, label:'Einde: '+c.naam, sub:`Campagne &middot; ${esc(orgName(c.orgId))}`, color:orgColor(c.orgId), onclick:`openCampaignModal('${esc(c.id)}')` }));
   upcoming.sort((a,b)=>a.datum<b.datum?-1:1);
@@ -838,7 +884,7 @@ function openOrgModal(id){
 function saveOrg(id){
   const naam = val('f_naam').trim();
   if(!naam){ document.getElementById('f_error').textContent='Naam is verplicht.'; return; }
-  const rec = { id: id || uid('org'), naam, kleur: val('f_kleur')||'#7A7565', type: val('f_type').trim(), verantwoordelijke: val('f_verantwoordelijke').trim(), budget: num('f_budget'), doelstellingen: val('f_doelstellingen').trim(), website: val('f_website').trim(), notities: val('f_notities').trim() };
+  const rec = { id: id || uid('org'), naam, kleur: val('f_kleur')||'#5F6F85', type: val('f_type').trim(), verantwoordelijke: val('f_verantwoordelijke').trim(), budget: num('f_budget'), doelstellingen: val('f_doelstellingen').trim(), website: val('f_website').trim(), notities: val('f_notities').trim() };
   const idx = DATA.orgs.findIndex(o=>o.id===id);
   if(idx>-1) DATA.orgs[idx]=rec; else DATA.orgs.push(rec);
   saveData(); closeModal('orgOverlay'); renderAll(); toast('Werkmaatschappij opgeslagen');
@@ -1036,7 +1082,7 @@ function renderCalendar(){
     html += `<div class="cal-cell ${inMonth?'':'other-month'} ${iso===today?'today':''}" onclick="openCalModal(null,'${iso}')">
       <div class="cal-daynum">${cellDate.getDate()}</div>
       ${campStarts.map(c=>`<div class="cal-item" style="background:${orgColor(c.orgId)};opacity:.85" onclick="event.stopPropagation();openCampaignModal('${esc(c.id)}')" title="Start campagne: ${esc(c.naam)}">&#9654; ${esc(c.naam)}</div>`).join('')}
-      ${items.map(it=>`<div class="cal-item" style="background:${CAL_TYPES[it.type]||'#7A7565'}" onclick="event.stopPropagation();openCalModal('${esc(it.id)}')" title="${esc(it.titel)} (${esc(orgName(it.orgId))})">${esc(it.titel)}</div>`).join('')}
+      ${items.map(it=>`<div class="cal-item" style="background:${CAL_TYPES[it.type]||'#5F6F85'}" onclick="event.stopPropagation();openCalModal('${esc(it.id)}')" title="${esc(it.titel)} (${esc(orgName(it.orgId))})">${esc(it.titel)}</div>`).join('')}
     </div>`;
   }
   document.getElementById('calGrid').innerHTML = html;
@@ -1045,7 +1091,7 @@ function renderCalendar(){
   const listItems = DATA.calendar.filter(c=>monthOf(c.datum)===mKey).sort((a,b)=>a.datum<b.datum?-1:1);
   document.getElementById('calList').innerHTML = listItems.length ? listItems.map(it=>`
     <div class="list-row clickable" onclick="openCalModal('${esc(it.id)}')">
-      <div class="list-row-main"><div class="list-row-title"><span style="color:${CAL_TYPES[it.type]||'#7A7565'}">&#9679;</span> ${esc(it.titel)}</div><div class="list-row-sub">${esc(it.type)} &middot; ${esc(orgName(it.orgId))}</div></div>
+      <div class="list-row-main"><div class="list-row-title"><span style="color:${CAL_TYPES[it.type]||'#5F6F85'}">&#9679;</span> ${esc(it.titel)}</div><div class="list-row-sub">${esc(it.type)} &middot; ${esc(orgName(it.orgId))}</div></div>
       <span class="num" style="font-size:12px;color:var(--muted);">${fmtDate(it.datum)}</span>
     </div>`).join('') : '<div class="empty">Geen items deze maand.</div>';
 }
@@ -1135,6 +1181,7 @@ function renderKPI(){
 let chart1, chart2;
 function renderKPICharts(){
   if(typeof Chart==='undefined') return;
+  Chart.defaults.font.family = "'Source Sans 3','Segoe UI',Arial,sans-serif"; Chart.defaults.color = '#5F6F85';
   const entries = kpiEntries();
   const months = [...new Set(entries.map(k=>k.maand))].sort();
   const agg = months.map(m=>{ const rows=entries.filter(k=>k.maand===m); return { m, bezoek: rows.reduce((s,r)=>s+(r.bezoek||0),0), leads: rows.reduce((s,r)=>s+(r.leads||0),0), kosten: rows.reduce((s,r)=>s+(r.kosten||0),0) }; });
@@ -1145,16 +1192,16 @@ function renderKPICharts(){
   chart1 = new Chart(document.getElementById('kpiChart1'), {
     type:'line',
     data:{ labels, datasets:[
-      { label:'Websitebezoek', data:agg.map(a=>a.bezoek), borderColor:'#3D5A73', backgroundColor:'rgba(61,90,115,0.08)', fill:true, tension:.3, yAxisID:'y' },
-      { label:'Leads', data:agg.map(a=>a.leads), borderColor:'#C97B3D', backgroundColor:'rgba(201,123,61,0.08)', fill:true, tension:.3, yAxisID:'y1', borderDash:[4,3] }
+      { label:'Websitebezoek', data:agg.map(a=>a.bezoek), borderColor:'#19427B', backgroundColor:'rgba(25,66,123,0.08)', fill:true, tension:.3, yAxisID:'y' },
+      { label:'Leads', data:agg.map(a=>a.leads), borderColor:'#80BC00', backgroundColor:'rgba(128,188,0,0.10)', fill:true, tension:.3, yAxisID:'y1', borderDash:[4,3] }
     ]},
     options:{ ...common, scales:{ y:{position:'left',title:{display:true,text:'Bezoek'},beginAtZero:true}, y1:{position:'right',grid:{drawOnChartArea:false},title:{display:true,text:'Leads'},beginAtZero:true} } }
   });
   chart2 = new Chart(document.getElementById('kpiChart2'), {
     type:'line',
     data:{ labels, datasets:[
-      { label:'Conversie (%)', data:agg.map(a=>a.bezoek?+(a.leads/a.bezoek*100).toFixed(2):0), borderColor:'#5B8266', backgroundColor:'rgba(91,130,102,0.08)', fill:true, tension:.3, yAxisID:'y' },
-      { label:'Kosten per lead (euro)', data:agg.map(a=>a.leads?Math.round(a.kosten/a.leads):0), borderColor:'#7C5C8C', fill:false, tension:.3, borderDash:[4,3], yAxisID:'y1' }
+      { label:'Conversie (%)', data:agg.map(a=>a.bezoek?+(a.leads/a.bezoek*100).toFixed(2):0), borderColor:'#3D7CC9', backgroundColor:'rgba(61,124,201,0.08)', fill:true, tension:.3, yAxisID:'y' },
+      { label:'Kosten per lead (euro)', data:agg.map(a=>a.leads?Math.round(a.kosten/a.leads):0), borderColor:'#1F5B00', fill:false, tension:.3, borderDash:[4,3], yAxisID:'y1' }
     ]},
     options:{ ...common, scales:{ y:{position:'left',title:{display:true,text:'Conversie %'},beginAtZero:true}, y1:{position:'right',grid:{drawOnChartArea:false},title:{display:true,text:'Euro per lead'},beginAtZero:true} } }
   });
